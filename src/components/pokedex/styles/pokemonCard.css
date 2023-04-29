@@ -1,0 +1,105 @@
+.fire {
+    background: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
+    border: 0.5rem solid #E35825;
+    color: #E35825;
+}
+
+.grass_poison{
+    background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+    border: 0.5rem solid #ABDAC6;
+
+    color: #ABDAC6;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pokemon_card {
+    height: 350px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: white;
+    position: relative;
+}
+
+.pokemon_card-backgroundType {
+    height: 100px;
+    border: none;
+}
+
+.pokemon_card-info {
+    width: 100%;
+    position: absolute;
+    top: -3%;
+    left: 0;
+    padding-top: 1rem;
+
+}
+
+.pokemon_card-img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.pokemon_card-name {
+    text-align: center;
+}
+
+.pokemon_card-types {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    color: black;
+}
+
+.pokemon_card-titleType {
+    text-align: center;
+    color: #9F9F9F;
+}
+
+.pokemon_card-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.pokemon_card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.pokemon_card-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.pokemon_card-itemTitle {
+    text-align: center;
+    color: #9F9F9F;
+    font-size: 0.7rem;
+}
+
+.pokemon_card-itemValue {
+    text-align: center;
+    background: none;
+    border: none;
+}
