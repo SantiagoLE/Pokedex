@@ -10,8 +10,6 @@ const Pokedex = () => {
 
     const { trainerName, filterTypePokemon } = useSelector(state => state)
 
-    console.log(filterTypePokemon);
-
     const url = filterTypePokemon ?  `https://pokeapi.co/api/v2/type/${filterTypePokemon}` : `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`
   
     const [allPokemons, getAllPokemons] = useFetch(url)
@@ -37,6 +35,7 @@ const Pokedex = () => {
                         <PokemonCard 
                         key={pokemon.pokemon.url}
                         url={pokemon.pokemon.url}
+                        name={pokemon.pokemon.name}
                         />
                     ))
                     
@@ -45,6 +44,7 @@ const Pokedex = () => {
                         <PokemonCard
                             key={pokemon.url}
                             url={pokemon.url}
+                            name={pokemon.name}
                         />
                     ))
                 }

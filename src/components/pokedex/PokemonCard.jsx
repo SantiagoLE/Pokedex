@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import "./styles/pokemonCard.css"
+import { useNavigate } from 'react-router-dom'
 
-const PokemonCard = ({ url }) => {
+const PokemonCard = ({ url, name }) => {
 
     const [pokemon, getPokemon] = useFetch(url)
 
@@ -10,18 +11,22 @@ const PokemonCard = ({ url }) => {
         getPokemon()
     }, [])
 
+    const navigate = useNavigate()
 
+const handleClick = (name) => {
+   navigate (`/pokedex/${name}`)
+}
 
 
     return (
-        <article className={`pokemon_card ${pokemon?.types[0].type.name}`}>
+        <article className={`pokemon_card ${pokemon?.types[0].type.name}`} onClick={() => handleClick(name)}>
             <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}>
 
             </div>
             <div className='pokemon_card-info'>
 
-                <img className='pokemon_card-img' src={pokemon?.sprites.other["official-artwork"].front_default} alt="" />
-                <h2 className='pokemon_card-name'>{pokemon?.forms[0].name}</h2>
+                <img className='pokemon_card-img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.name} />
+                <h2 className='pokemon_card-name'>{pokemon?.name}</h2>
                 <ul className='pokemon_card-types'>
                     {
                         pokemon?.types.map((poke, index) => (
