@@ -8,7 +8,7 @@ import "./styles/pokedex.css"
 
 const Pokedex = () => {
 
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=5&offset=0`
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=281&offset=1000`
     const [allPokemons, getAllPokemons] = useFetch(url)
 
     useEffect(() => {

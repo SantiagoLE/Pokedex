@@ -15,8 +15,8 @@ const PokemonCard = ({ url }) => {
     console.log(pokemon);
 
     return (
-        <article className={`pokemon_card ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>
-            <div className={`pokemon_card-backgroundType  ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>
+        <article className={`pokemon_card ${pokemon?.types[0].type.name}`}>
+            <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}>
 
             </div>
             <div className='pokemon_card-info'>
@@ -42,21 +42,15 @@ const PokemonCard = ({ url }) => {
 
                 <section className='pokemon_card-section'>
                     <ul className='pokemon_card-list'>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>HP</span><span className={`pokemon_card-itemValue ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>{pokemon?.stats[0].base_stat}</span></li>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>DEFENSE</span><span className={`pokemon_card-itemValue ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>{pokemon?.stats[2].base_stat}</span></li>
+                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>HP</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[0].base_stat}</span></li>
+                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>DEFENSE</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[2].base_stat}</span></li>
                     </ul>
                     <ul className='pokemon_card-list'>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>ATTACK</span><span className={`pokemon_card-itemValue ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>{pokemon?.stats[1].base_stat}</span></li>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>SPEED</span><span className={`pokemon_card-itemValue ${pokemon?.types.length === 1 ? pokemon?.types[0].type.name : `${pokemon?.types[0].type.name}_${pokemon?.types[1].type.name}`}`}>{pokemon?.stats[5].base_stat}</span></li>
+                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>ATTACK</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[1].base_stat}</span></li>
+                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>SPEED</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[5].base_stat}</span></li>
                     </ul>
                 </section>
             </div>
-
-
-
-
-
-
 
 
 
