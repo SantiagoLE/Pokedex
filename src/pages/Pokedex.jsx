@@ -21,8 +21,6 @@ const Pokedex = () => {
         getAllPokemons()
     }, [url])
 
-// console.log(pokemonName);
-
 
     return (
         <div>
@@ -33,7 +31,10 @@ const Pokedex = () => {
             <div className='pokemon_card-containt'>
                 {
                     pokemonName
-                        ? <PokemonCard />
+                        ? <PokemonCard 
+                        name={pokemonName}
+                        />
+
                         :
                         filterTypePokemon
                             ? allPokemons?.pokemon?.map(pokemon => (
@@ -43,7 +44,6 @@ const Pokedex = () => {
                                     name={pokemon.pokemon.name}
                                 />
                             ))
-
 
                             : allPokemons?.results?.map(pokemon => (
                                 <PokemonCard
