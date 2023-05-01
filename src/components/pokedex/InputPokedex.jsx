@@ -1,12 +1,16 @@
 import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
 
 const InputPokedex = () => {
 
     const inputPoke = useRef()
 
+    const dispatch = useDispatch()
+
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(inputPoke.current.value)
+        dispatch(setPokemonName(inputPoke.current.value))
     }
     return (
         <div>

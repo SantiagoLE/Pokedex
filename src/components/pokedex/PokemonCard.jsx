@@ -2,14 +2,22 @@ import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import "./styles/pokemonCard.css"
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+
 
 const PokemonCard = ({ url, name }) => {
 
-    const [pokemon, getPokemon] = useFetch(url)
+    const {pokemonName} = useSelector(state => state)
+
+   const urlSeacrh = pokemonName ? `https://pokeapi.co/api/v2/pokemon/${pokemonName}` : url
+ 
+
+    const [pokemon, getPokemon] = useFetch(urlSeacrh)
 
     useEffect(() => {
         getPokemon()
-    }, [])
+    }, [urlSeacrh])
 
     const navigate = useNavigate()
 
