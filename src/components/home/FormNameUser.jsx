@@ -1,11 +1,10 @@
 import React, { useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setTrainerName } from '../../store/slices/trainerName.slice'
 
 const FormNameUser = () => {
 
-    const {trainerName} = useSelector(state => state)
    const inputName = useRef()
 
    const dispatch = useDispatch()
@@ -18,7 +17,6 @@ dispatch(setTrainerName(inputName.current.value.trim()))
 navigate("/pokedex")
 }
 
-console.log(trainerName);
 
   return (
     <div>

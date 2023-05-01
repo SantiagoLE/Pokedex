@@ -8,9 +8,9 @@ const trainerNameSlice = createSlice({
     initialState: "",
     reducers: {
         setTrainerName: (state, action) => action.payload
-}
+    }
 })
 
-export const {setTrainerName} = trainerNameSlice.actions
+export const { setTrainerName } = trainerNameSlice.actions
 
 export default trainerNameSlice.reducer

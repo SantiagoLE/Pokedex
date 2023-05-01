@@ -12,7 +12,6 @@ const PokemonCard = ({ url }) => {
 
 
 
-    console.log(pokemon);
 
     return (
         <article className={`pokemon_card ${pokemon?.types[0].type.name}`}>
