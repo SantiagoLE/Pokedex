@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import "./styles/pokedexById.css"
+import Stats from '../components/pokedexById/Stats'
+import Movements from '../components/pokedexById/Movements'
 
 const PokedexById = () => {
 
@@ -16,6 +18,8 @@ const PokedexById = () => {
   }, [url])
 
   console.log(pokemon);
+
+
 
   return (
     <article>
@@ -48,16 +52,12 @@ const PokedexById = () => {
         </ul>
       </section>
 
-      <section>
-        <h2>Stats</h2>
-        <ul>
-          <li className='a'><span>HP</span><span>{pokemon?.stats[0].base_stat}</span></li>
-          <li className='b'><span>Attack</span><span>{pokemon?.stats[1].base_stat}</span></li>
-          <li><span>Defense</span><span>{pokemon?.stats[2].base_stat}</span></li>
-          <li><span>Seed</span><span>{pokemon?.stats[5].base_stat}</span></li>
-        </ul>
-      </section>
+<Stats pokemon={pokemon}/>
+     
+     <hr />
 
+<Movements pokemon={pokemon}/>
+     
 
 
     </article>

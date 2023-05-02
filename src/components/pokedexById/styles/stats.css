@@ -1,0 +1,26 @@
+/* .stats_section{
+
+} */
+
+.stats_title{
+margin-bottom: 1.5rem;
+}
+
+.stats_title-item{
+margin-bottom: 0.5rem;
+}
+
+.stats_bar-contain{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats_bar{
+height: 17px;
+background: linear-gradient(179.75deg, #e40606 -19.96%, #cc3000 43.67%, #fdf90c 138.4%);
+margin-bottom: 1rem;
+}
+
+.stats_bar-value{
+font-weight: 500;
+}
