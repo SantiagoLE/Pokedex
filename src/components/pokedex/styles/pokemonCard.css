@@ -115,7 +115,7 @@
 
 
 .pokemon_card {
-    height: 350px;
+    height: 380px;
     width: 100%;
     max-width: 250px;
     border-radius: 0.5rem;
@@ -132,19 +132,20 @@
 .pokemon_card-info {
     width: 100%;
     position: absolute;
-    top: -3%;
+    top: -1.5%;
     left: 0;
     padding-top: 1rem;
 
 }
 
 .pokemon_card-img {
-    width: 150px;
+   max-width: 150px;
     margin: 0 auto;
 }
 
 .pokemon_card-name {
     text-align: center;
+    text-transform: capitalize;
 }
 
 .pokemon_card-types {
@@ -153,6 +154,7 @@
     font-size: 1.1rem;
     font-weight: lighter;
     color: black;
+    text-transform: capitalize;
 }
 
 .pokemon_card-titleType {

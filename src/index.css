@@ -18,13 +18,19 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, button, input, se
 
   ul{
     list-style: none;
+    padding-left: 0;
   }
 
   button{
     cursor: pointer;
-  }
-
-  :root{
-    --fire:  orangered;
+    font-family: inherit;
   }
   
+  input{
+    outline: none;
+    font-family: inherit;
+  }
+  
+  select {
+    font-family: inherit;
+  }

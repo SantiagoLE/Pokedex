@@ -1,0 +1,23 @@
+.movements_section{
+width: 100%;
+padding: 0 1rem;
+margin-top: 3rem;
+}
+
+.movements_title{
+font-size: 1.8rem;
+margin-bottom: 1.5rem;
+}
+
+.movements_list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.movements_item{
+background-color: rgb(185, 185, 184);
+border-radius: 0.5rem;
+padding: 0 0.5rem;
+text-align: center;
+}

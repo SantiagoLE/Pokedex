@@ -1,0 +1,37 @@
+
+.typeAndAbilities_containt{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.TypeAndAbilities_section{
+    display: grid;
+    justify-content: center;
+}
+
+.TypeAndAbilities_section-title{
+text-align: center;
+margin-bottom: 1rem;
+}
+
+.TypeAndAbilities_section-list{
+    display: flex;
+    gap: 1rem;
+}
+
+.TypeAndAbilities_item-tipe{
+    border: none;
+    color: rgba(22, 24, 22, 0.897);
+    padding: 0 1rem;
+    font-weight: 700;
+    border-radius: 0.2rem;
+}
+
+.TypeAndAbilities_item-ability{
+    font-weight: 700;
+    background-color: rgb(185, 185, 184);
+    padding: 0 1rem;
+    border-radius: 0.2rem;
+}

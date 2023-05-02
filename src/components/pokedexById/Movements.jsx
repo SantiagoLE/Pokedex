@@ -4,12 +4,14 @@ import "./styles/movements.css"
 const Movements = ({pokemon}) => {
 
   return (
-    <section>
-    <h3>Movements</h3>
-    <ul>
+    <section className='movements_section'>
+
+    <h2 className='movements_title'>Movements</h2>
+    
+    <ul className='movements_list'>
       {
        pokemon?.moves.map(move => (
-        <li key={move.move.url}>{move.move.name}</li>
+        <li className='movements_item' key={move.move.url}>{move.move.name}</li>
        )) 
       }
     </ul>

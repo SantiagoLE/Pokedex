@@ -28,9 +28,8 @@ const handleClick = (name) => {
 
     return (
         <article className={`pokemon_card ${pokemon?.types[0].type.name}`} onClick={() => handleClick(name)}>
-            <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}>
-
-            </div>
+            <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}></div>
+          
             <div className='pokemon_card-info'>
 
                 <img className='pokemon_card-img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.name} />

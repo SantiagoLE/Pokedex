@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch'
 import "./styles/pokedexById.css"
 import Stats from '../components/pokedexById/Stats'
 import Movements from '../components/pokedexById/Movements'
+import TypeAndAbilities from '../components/pokedexById/TypeAndAbilities'
 
 const PokedexById = () => {
 
@@ -22,43 +23,32 @@ const PokedexById = () => {
 
 
   return (
-    <article>
-      <img src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.forms[0].name} />
-      <h2><span># {pokemon?.id}</span><span>{pokemon?.name}</span></h2>
-      <ul>
-        <li><span>Weight</span><span>{pokemon?.weight / 10} kg</span></li>
-        <li><span>Height</span><span>{pokemon?.height / 10} m</span></li>
-      </ul>
+    <article className='pokedexById_contain'>
 
-      <section>
-        <h3>Types</h3>
-        <ul>
-          {
-            pokemon?.types.map(type => (
-              <li key={type.slot}>{type.type.name}</li>
-            ))
-          }
+
+      <div className='pokedexById_info'>
+
+        <header className={`pokedexById-backgroundType  ${pokemon?.types[0].type.name}`}>
+        </header>
+
+        <div className='pokedexByID_img-contain'>
+          <img className='pokedexById_img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.forms[0].name} />
+        </div>
+
+
+
+        <h2 className={`pokedexById_title ${pokemon?.types[0].type.name}`}><span className='pokedexById_title-id'># {pokemon?.id}</span><span className='pokedexById_title-name'>{pokemon?.name}</span></h2>
+        <ul className='pokedexByID_list'>
+          <li className='pokedexByID_item'><span className='pokedexByID_item-title'>Weight</span><span className='pokedexByID_item-value'>{pokemon?.weight / 10} kg</span></li>
+          <li className='pokedexByID_item'><span className='pokedexByID_item-title'>Height</span><span className='pokedexByID_item-value'>{pokemon?.height / 10} m</span></li>
         </ul>
-      </section>
 
-      <section>
-      <h3>Abilities</h3>
-        <ul>
-          {
-            pokemon?.abilities.map(ability => (
-              <li key={ability.slot}>{ability.ability.name}</li>
-            ))
-          }
-        </ul>
-      </section>
+        <TypeAndAbilities pokemon={pokemon} />
 
-<Stats pokemon={pokemon}/>
-     
-     <hr />
+        <Stats pokemon={pokemon} />
 
-<Movements pokemon={pokemon}/>
-     
-
+        <Movements pokemon={pokemon} />
+      </div>
 
     </article>
   )
