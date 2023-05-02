@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setTrainerName } from '../../store/slices/trainerName.slice'
+import "./styles/formNameUser.css"
 
 const FormNameUser = () => {
 
@@ -19,10 +20,10 @@ navigate("/pokedex")
 
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input ref={inputName} type="text" />
-            <button>Start</button>
+    <div className='form_name-contain'>
+        <form className='form' onSubmit={handleSubmit}>
+            <input className='form_input' ref={inputName} type="text" placeholder='Input name...'/>
+            <button className='form_button'>Start</button>
         </form>
     </div>
   )

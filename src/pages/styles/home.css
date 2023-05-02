@@ -1,0 +1,99 @@
+.home_img-contain{
+    width: 100%;
+    display: flex;
+justify-content: center;
+margin-top: 10rem;
+margin-bottom: 2.5rem;
+}
+
+.home_img{
+    max-width: 600px;
+    place-self: center;
+    text-align: center;
+    }
+
+.home_greeting{
+color: #FE1936;
+text-align: center;
+font-size: 4rem;
+padding: 0 1rem;
+}
+
+.home_paragraph{
+    text-align: center;
+    font-size: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 2.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home_footer{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.color_red{
+width: 100%;
+height: 70px ;
+background-color: red;
+}
+
+.color_black{
+width: 100%;
+height: 50px;
+background-color: black;
+}
+
+.circles_contain{
+width: 100%;
+display: flex;
+justify-content: center;
+position: fixed;
+z-index: 10;
+left: 0;
+bottom: 0;
+}
+
+.circle_white{
+    width: 100px;
+    aspect-ratio: 1;
+ background-color: white;
+ border-radius: 50%;
+ border: 10px solid black;
+ position: relative;
+}
+
+.circle_gray{
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: rgb(44, 44, 44)
+    ;
+    border-radius: 50%;
+    border: 10px solid black;
+
+    z-index: 20;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
