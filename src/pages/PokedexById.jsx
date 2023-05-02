@@ -18,13 +18,13 @@ const PokedexById = () => {
     getPokemon()
   }, [url])
 
+  
   console.log(pokemon);
 
 
 
   return (
     <article className='pokedexById_contain'>
-
 
       <div className='pokedexById_info'>
 
@@ -35,9 +35,8 @@ const PokedexById = () => {
           <img className='pokedexById_img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.forms[0].name} />
         </div>
 
-
-
         <h2 className={`pokedexById_title ${pokemon?.types[0].type.name}`}><span className='pokedexById_title-id'># {pokemon?.id}</span><span className='pokedexById_title-name'>{pokemon?.name}</span></h2>
+        
         <ul className='pokedexByID_list'>
           <li className='pokedexByID_item'><span className='pokedexByID_item-title'>Weight</span><span className='pokedexByID_item-value'>{pokemon?.weight / 10} kg</span></li>
           <li className='pokedexByID_item'><span className='pokedexByID_item-title'>Height</span><span className='pokedexByID_item-value'>{pokemon?.height / 10} m</span></li>

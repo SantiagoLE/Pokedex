@@ -10,7 +10,7 @@ const InputPokedex = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        dispatch(setPokemonName(inputPoke.current.value))
+        dispatch(setPokemonName(inputPoke.current.value.trim().toLowerCase()))
     }
     return (
         <div>

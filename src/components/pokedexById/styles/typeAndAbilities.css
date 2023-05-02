@@ -6,31 +6,34 @@
     padding: 0 1rem;
 }
 
-.TypeAndAbilities_section{
+.typeAndAbilities_section{
     display: grid;
     justify-content: center;
 }
 
-.TypeAndAbilities_section-title{
+.typeAndAbilities_section-title{
 text-align: center;
 margin-bottom: 1rem;
 }
 
-.TypeAndAbilities_section-list{
+.typeAndAbilities_section-list{
     display: flex;
     gap: 1rem;
 }
 
-.TypeAndAbilities_item-tipe{
+.typeAndAbilities_item-tipe{
+    text-shadow: 1px 1px 10px #fffbfb;
     border: none;
-    color: rgba(22, 24, 22, 0.897);
+    color: black;
     padding: 0 1rem;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 0.2rem;
+    font-size: 1.1rem;
 }
 
-.TypeAndAbilities_item-ability{
-    font-weight: 700;
+.typeAndAbilities_item-ability{
+    font-weight: 500;
+    font-size: 1.1rem;
     background-color: rgb(185, 185, 184);
     padding: 0 1rem;
     border-radius: 0.2rem;

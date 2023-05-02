@@ -5,7 +5,7 @@
 }
 
 .grass{
-    background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+    background: linear-gradient(178.92deg, #7EC6C5 0.92%, #1dd88d 47.96%, #CAE099 99.08%);
     border: 0.5rem solid #ABDAC6;
     color: #ABDAC6;
 
@@ -90,7 +90,7 @@
 }
 
 .dark{
-    background: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%);
+    background: linear-gradient(177.03deg, #030706 -1.97%, #595a5a 57.49%, #5A5E5D 135.64%);
     border: 0.5rem solid #0D1211;
     color: #0D1211;
 }

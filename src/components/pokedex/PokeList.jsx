@@ -43,7 +43,7 @@ const PokeList = () => {
 
         <div className='poke-container'>
             <select ref={typeSelect} onClick={handleClick}  >
-                <option value="allPokemons" >All Pokemons</option>
+                <option value="allPokemons" >all pokemons</option>
                 {
                     allTypePoke?.results.map(typePoke => (
                         <option key={typePoke.name} value={typePoke.name} >{typePoke.name}</option>

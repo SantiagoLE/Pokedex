@@ -5,23 +5,23 @@ const TypeAndAbilities = ({pokemon}) => {
   return (
     <div className='typeAndAbilities_containt'>
 
-     <section className='TypeAndAbilities_section'>
-    <h3 className='TypeAndAbilities_section-title'>Types</h3>
-    <ul className='TypeAndAbilities_section-list'>
+     <section className='typeAndAbilities_section'>
+    <h3 className='typeAndAbilities_section-title'>Types</h3>
+    <ul className='typeAndAbilities_section-list'>
       {
         pokemon?.types.map(type => (
-          <li className={`TypeAndAbilities_item-tipe ${type.type.name}`} key={type.slot}>{type.type.name}</li>
+          <li className={`typeAndAbilities_item-tipe ${type.type.name}`} key={type.slot}>{type.type.name}</li>
         ))
       }
     </ul>
   </section>
 
-  <section className='TypeAndAbilities_section'>
-  <h3 className='TypeAndAbilities_section-title'>Abilities</h3>
-    <ul className='TypeAndAbilities_section-list'>
+  <section className='typeAndAbilities_section'>
+  <h3 className='typeAndAbilities_section-title'>Abilities</h3>
+    <ul className='typeAndAbilities_section-list'>
       {
         pokemon?.abilities.map(ability => (
-          <li className='TypeAndAbilities_item-ability' key={ability.slot}>{ability.ability.name}</li>
+          <li className='typeAndAbilities_item-ability' key={ability.slot}>{ability.ability.name}</li>
         ))
       }
     </ul>

@@ -1,9 +1,14 @@
 .pokedexById_contain{
     display: grid;
-    padding: 5rem;
+    padding: 5rem 1rem 1rem 1rem;
     justify-content: center;
 }
 
+@media (min-width: 768px) {
+    .pokedexById_contain{
+        padding: 5rem 5rem 1rem 5rem;
+    }
+  }
 .pokedexById_info{
     width: 100%;
     border: 1px solid rgba(26, 23, 23, 0.212);
