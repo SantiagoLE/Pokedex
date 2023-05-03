@@ -1,0 +1,14 @@
+
+.pokelist_select{
+    margin-right: 1rem;
+    height: 35px;
+    padding: 5px 5px 5px 10px;
+    border:none;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    font-size: 1.2rem;
+}
+
+.pokelist_option{
+    text-transform: capitalize;
+}

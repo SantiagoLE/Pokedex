@@ -3,6 +3,7 @@ import useFetch from '../../hooks/useFetch'
 import { useDispatch } from 'react-redux'
 import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slice'
 import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
+import "./styles/pokeList.css"
 
 const PokeList = () => {
 
@@ -41,12 +42,12 @@ const PokeList = () => {
 
     return (
 
-        <div className='poke-container'>
-            <select ref={typeSelect} onClick={handleClick}  >
-                <option value="allPokemons" >all pokemons</option>
+        <div className='pokelist_contain'>
+            <select className='pokelist_select' ref={typeSelect} onClick={handleClick}  >
+                <option className='pokelist_option' value="allPokemons" >all pokemons</option>
                 {
                     allTypePoke?.results.map(typePoke => (
-                        <option key={typePoke.name} value={typePoke.name} >{typePoke.name}</option>
+                        <option className='pokelist_option' key={typePoke.name} value={typePoke.name} >{typePoke.name}</option>
                     ))
                 }
             </select>

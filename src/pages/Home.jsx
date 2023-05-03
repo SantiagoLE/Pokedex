@@ -18,11 +18,11 @@ const Home = () => {
       <FormNameUser />
 
       <footer className='home_footer'>
-        <div className='color_red'></div>
-        <div className='color_black'></div>
-        <div className='circles_contain'>
-          <div className='circle_white'>
-          <div className='circle_gray'></div>
+        <div className='footer_color-red'></div>
+        <div className='footer_color-black'></div>
+        <div className='footer_circles-contain'>
+          <div className='footer_circle-white'>
+          <div className='footer_circle-gray'></div>
           </div>
         </div>
       </footer>

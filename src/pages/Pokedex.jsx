@@ -23,11 +23,23 @@ const Pokedex = () => {
 
 
     return (
-        <div>
-            <h1>Pokedex</h1>
-            <p><span>Welcome {trainerName}</span></p>
+      <>
+           <header className='pokedexById_header'>
+      <img className='header_img' src="/pokedex.png" alt="" />
+        <div className='header_color-red'></div>
+        <div className='header_color-black'></div>
+        <div className='header_circles-contain'>
+          <div className='header_circle-white'></div>
+          <div className='header_circle-gray'></div>
+        </div>
+      </header>
+  <div className='pokedex_contain'>
+            <p className='pokedex_paragraph'><span>Welcome {trainerName}</span></p>
+            <div className='pokedex_input-contain'>
             <InputPokedex />
             <PokeList />
+            </div>
+           
             <div className='pokemon_card-containt'>
                 {
                     pokemonName
@@ -58,6 +70,7 @@ const Pokedex = () => {
 
 
         </div>
+        </>
     )
 }
 

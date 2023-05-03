@@ -1,7 +1,23 @@
-
+.pokedex_contain{
+    margin-top: 6rem;
+}
 .pokemon_card-containt{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+    margin:0 1rem 1rem 1rem ;
+}
+
+.pokedex_paragraph{
+    margin: 1rem 1rem;
+}
+
+.pokedex_input-contain{
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    gap: 2rem;
+    
 }
