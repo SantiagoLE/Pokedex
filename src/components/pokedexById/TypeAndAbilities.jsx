@@ -1,5 +1,5 @@
 import React from 'react'
-import "./styles/TypeAndAbilities.css"
+import "./styles/typeAndAbilities.css"
 
 const TypeAndAbilities = ({pokemon}) => {
   return (
