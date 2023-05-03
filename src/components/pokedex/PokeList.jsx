@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import { useDispatch } from 'react-redux'
 import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slice'

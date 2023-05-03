@@ -1,9 +1,9 @@
 .pokedexById_contain {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 14rem  auto 0 auto;
     display: grid;
-    padding: 10rem 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
     justify-content: center;
 }
 
@@ -13,7 +13,6 @@
     top: 0;
     left: 0;
     z-index: 30;
-    margin-bottom: 100rem;
 }
 
 .header_img{
@@ -70,6 +69,7 @@
     border-top: none;
     margin: 0 auto;
     padding-bottom: 1rem;
+    position: relative;
 }
 
 .pokedexById-backgroundType {
@@ -82,13 +82,13 @@
     width: 100%;
     z-index: 20;
     position: absolute;
-    top: 30%;
+    top: -1%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .pokedexById_img {
-    max-width: 200px;
+    width: 200px;
     margin: auto
 }
 

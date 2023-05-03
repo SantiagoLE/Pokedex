@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import "./styles/pokedexById.css"
@@ -24,10 +24,9 @@ const PokedexById = () => {
 
 
   return (
-    <div className='pokedexById_contain'>
 
-
-      <header className='pokedexById_header'>
+    <>
+     <header className='pokedexById_header'>
         <img className='header_img' src="/pokedex.png" alt="" />
         <div className='header_color-red'></div>
         <div className='header_color-black'></div>
@@ -37,7 +36,9 @@ const PokedexById = () => {
         </div>
       </header>
 
-      <div className='pokedexById_info'>
+    <div className='pokedexById_contain'>
+
+     <div className='pokedexById_info'>
 
         <header className={`pokedexById-backgroundType  ${pokemon?.types[0].type.name}`}>
         </header>
@@ -61,6 +62,8 @@ const PokedexById = () => {
       </div>
 
     </div>
+    </>
+   
   )
 }
 
