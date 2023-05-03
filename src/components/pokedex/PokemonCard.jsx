@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React,{ useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import "./styles/pokemonCard.css"
 import { useNavigate } from 'react-router-dom'

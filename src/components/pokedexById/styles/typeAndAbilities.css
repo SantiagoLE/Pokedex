@@ -18,8 +18,12 @@ margin-bottom: 1rem;
 
 .typeAndAbilities_section-list{
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
+
+
 
 .typeAndAbilities_item-tipe{
     text-shadow: 1px 1px 10px #fffbfb;
