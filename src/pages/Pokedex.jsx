@@ -1,10 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import InputPokedex from '../components/pokedex/InputPokedex'
 import PokeList from '../components/pokedex/PokeList'
 import PokemonCard from '../components/pokedex/PokemonCard'
 import useFetch from '../hooks/useFetch'
 import "./styles/pokedex.css"
+import Pagination from '../components/pokedex/Pagination'
 
 const Pokedex = () => {
 
@@ -12,7 +13,7 @@ const Pokedex = () => {
 
     const url = filterTypePokemon
         ? `https://pokeapi.co/api/v2/type/${filterTypePokemon}`
-        : `https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`
+        : `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
 
     const [allPokemons, getAllPokemons] = useFetch(url)
 
@@ -21,6 +22,13 @@ const Pokedex = () => {
         getAllPokemons()
     }, [url])
 
+    // PAGINACION 
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [pokemonsPerPag, setpokemonsPerPag] = useState(20) //Numero de elementos por pagina
+    const totalPokemons = filterTypePokemon ? allPokemons?.pokemon?.length : allPokemons?.results?.length
+    const lastIndex = currentPage * pokemonsPerPag //Numero de elementos por pagina
+    const firstIndex = lastIndex - pokemonsPerPag //Numero de elementos por pagina
 
     return (
         <>
@@ -41,6 +49,13 @@ const Pokedex = () => {
                     <PokeList />
                 </div>
 
+                <Pagination
+                    totalPokemons={totalPokemons}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    pokemonsPerPag={pokemonsPerPag}
+                />
+
                 <div className='pokemon_card-containt'>
                     {
                         pokemonName
@@ -56,7 +71,7 @@ const Pokedex = () => {
                                         url={pokemon.pokemon.url}
                                         name={pokemon.pokemon.name}
                                     />
-                                ))
+                                )).slice(firstIndex, lastIndex)
 
                                 : allPokemons?.results?.map(pokemon => (
                                     <PokemonCard
@@ -64,7 +79,8 @@ const Pokedex = () => {
                                         url={pokemon.url}
                                         name={pokemon.name}
                                     />
-                                ))
+                                )).slice(firstIndex, lastIndex)
+
                     }
 
                 </div>

@@ -12,7 +12,6 @@ const PokemonCard = ({ url, name }) => {
 
    const urlSeacrh = pokemonName ? `https://pokeapi.co/api/v2/pokemon/${pokemonName}` : url
  
-console.log(pokemonName);
     const [pokemon, getPokemon] = useFetch(urlSeacrh)
 
     useEffect(() => {
