@@ -23,7 +23,7 @@ navigate("/pokedex")
     <div className='form_name-contain'>
         <form className='form' onSubmit={handleSubmit}>
             <input className='form_input' ref={inputName} type="text" placeholder='Input name...'/>
-            <button className='form_button'>Start</button>
+            <button className='form_button'>Start.</button>
         </form>
     </div>
   )
