@@ -5,7 +5,7 @@
     padding: 0 1rem;
 }
 
-@media (min-width: 500px){
+@media (min-width: 490px){
     .pokelist_contain{
       width: auto;
        
