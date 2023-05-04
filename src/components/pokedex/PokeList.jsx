@@ -3,8 +3,8 @@ import useFetch from '../../hooks/useFetch'
 import { useDispatch } from 'react-redux'
 import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slice'
 import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
-import "./styles/pokeList.css"
 import { setCurrentPage } from '../../store/slices/currentPage.slice'
+import "./styles/pokeList.css"
 
 const PokeList = () => {
 
@@ -28,7 +28,7 @@ const PokeList = () => {
     const handleClick = () => {
         setIsOpen(!isOpen)
 
-        if (isOpen) {
+        // if (isOpen) {
             if (typeSelect.current.value === "allPokemons") {
                 dispatch(setFilterTypePokemon(false));
                 dispatch(setPokemonName(false));
@@ -39,7 +39,7 @@ const PokeList = () => {
                 dispatch(setCurrentPage(1));
 
             }
-        }
+        // }
 
     }
 
@@ -47,7 +47,7 @@ const PokeList = () => {
     return (
 
         <div className='pokelist_contain'>
-            <select className='pokelist_select' ref={typeSelect} onClick={handleClick}  >
+            <select className='pokelist_select' ref={typeSelect} onChange={handleClick}  >
                 <option className='pokelist_option' value="allPokemons" >all pokemons</option>
                 {
                     allTypePoke?.results.map(typePoke => (

@@ -12,6 +12,7 @@ const InputPokedex = () => {
     const handleSubmit = e => {
         e.preventDefault()
         dispatch(setPokemonName(inputPoke.current.value.trim().toLowerCase()))
+        inputPoke.current.value = ""
     }
     return (
         <div className='inputPokedex_form-contain'>

@@ -1,3 +1,16 @@
+.pokelist_contain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+@media (min-width: 500px){
+    .pokelist_contain{
+      width: auto;
+       
+    }
+}
 
 .pokelist_select{
     margin-right: 1rem;

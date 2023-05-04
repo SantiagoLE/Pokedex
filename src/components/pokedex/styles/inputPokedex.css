@@ -1,7 +1,15 @@
 
 .inputPokedex_form-contain{
     padding-left: 1rem;
+    padding-right: 1rem;
     margin-bottom: 2rem;
+}
+
+@media (min-width: 500px){
+    .inputPokedex_form-contain{
+        padding-left: 1rem;
+        padding-right: 0;
+    }
 }
 
 .inputPokedex_form{

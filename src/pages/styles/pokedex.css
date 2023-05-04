@@ -83,8 +83,17 @@
 
 .pokedex_input-contain{
     width: 100%;
-    margin: 0 1rem;
+   padding: 0 1rem;
     display: flex;
-    gap: 2rem;
-    
+    flex-direction: column;
+   
+}
+
+@media (min-width: 500px ) {
+    .pokedex_input-contain{
+        margin: 0 1rem;
+        flex-direction: row;
+        gap: 2rem;
+        
+    }
 }
