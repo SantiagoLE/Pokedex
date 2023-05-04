@@ -1,7 +1,12 @@
 import React from 'react'
 import "./styles/pagination.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { setCurrentPage } from '../../store/slices/currentPage.slice'
 
-const Pagination = ({totalPokemons, currentPage, pokemonsPerPag, setCurrentPage}) => {
+const Pagination = ({totalPokemons, pokemonsPerPag}) => {
+
+    const {currentPage} = useSelector(state => state) //Llamo al estado global current page
+   const dispatch = useDispatch() // Llamo a la funcion para despachar las modificaciones 
 
     const pageNumbers = []
 
@@ -10,15 +15,15 @@ const Pagination = ({totalPokemons, currentPage, pokemonsPerPag, setCurrentPage}
     }
 
     const onPreviusPage = () => {
-        setCurrentPage(currentPage - 1)
+        dispatch(setCurrentPage(currentPage - 1))
     }
 
     const onNextPage = () => {
-        setCurrentPage(currentPage + 1)
-    }
+        dispatch(setCurrentPage(currentPage + 1)) 
+       }
 
     const onSpecificPage = (n) => {
-        setCurrentPage(n)
+        dispatch(setCurrentPage(n))
     }
     return (
         <nav className="pagination is-centered" role="navigation" aria-label="pagination">

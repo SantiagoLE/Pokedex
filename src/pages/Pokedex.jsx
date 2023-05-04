@@ -9,14 +9,14 @@ import Pagination from '../components/pokedex/Pagination'
 
 const Pokedex = () => {
 
-    const { trainerName, filterTypePokemon, pokemonName } = useSelector(state => state)
+    const { trainerName, filterTypePokemon, pokemonName, currentPage } = useSelector(state => state)
 
     const url = filterTypePokemon
         ? `https://pokeapi.co/api/v2/type/${filterTypePokemon}`
         : `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
 
     const [allPokemons, getAllPokemons] = useFetch(url)
-
+    console.log(filterTypePokemon);
 
     useEffect(() => {
         getAllPokemons()
@@ -24,7 +24,7 @@ const Pokedex = () => {
 
     // PAGINACION 
 
-    const [currentPage, setCurrentPage] = useState(1)
+    // Current page viene de un estado global
     const [pokemonsPerPag, setpokemonsPerPag] = useState(20) //Numero de elementos por pagina
     const totalPokemons = filterTypePokemon ? allPokemons?.pokemon?.length : allPokemons?.results?.length
     const lastIndex = currentPage * pokemonsPerPag //Numero de elementos por pagina
@@ -48,20 +48,21 @@ const Pokedex = () => {
                     <InputPokedex />
                     <PokeList />
                 </div>
+                {
+                    pokemonName
+                        ? ""
+                        : <Pagination
+                            totalPokemons={totalPokemons}
+                            pokemonsPerPag={pokemonsPerPag}
+                        />
 
-                <Pagination
-                    totalPokemons={totalPokemons}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                    pokemonsPerPag={pokemonsPerPag}
-                />
+                }
+
 
                 <div className='pokemon_card-containt'>
                     {
                         pokemonName
-                            ? <PokemonCard
-                                name={pokemonName}
-                            />
+                            ? <PokemonCard />
 
                             :
                             filterTypePokemon
@@ -85,6 +86,15 @@ const Pokedex = () => {
 
                 </div>
 
+                {
+                    pokemonName
+                        ? ""
+                        : <Pagination
+                            totalPokemons={totalPokemons}
+                            pokemonsPerPag={pokemonsPerPag}
+                        />
+
+                }
 
             </div>
         </>

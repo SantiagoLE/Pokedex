@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 
 
-const PokemonCard = ({ url, name }) => {
+const PokemonCard = ({ url }) => {
 
     const {pokemonName} = useSelector(state => state)
 
@@ -20,13 +20,14 @@ const PokemonCard = ({ url, name }) => {
 
     const navigate = useNavigate()
 
-const handleClick = (name) => {
-   navigate (`/pokedex/${name}`)
+const handleClick = () => {
+   navigate (`/pokedex/${pokemonName}`)
+   
 }
 
 
     return (
-        <article className={`pokemon_card ${pokemon?.types[0].type.name}`} onClick={() => handleClick(name)}>
+        <article className={`pokemon_card ${pokemon?.types[0].type.name}`} onClick={handleClick}>
             <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}></div>
           
             <div className='pokemon_card-info'>

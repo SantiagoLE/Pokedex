@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slice'
 import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
 import "./styles/pokeList.css"
+import { setCurrentPage } from '../../store/slices/currentPage.slice'
 
 const PokeList = () => {
 
@@ -31,9 +32,12 @@ const PokeList = () => {
             if (typeSelect.current.value === "allPokemons") {
                 dispatch(setFilterTypePokemon(false));
                 dispatch(setPokemonName(false));
+                dispatch(setCurrentPage(1));
             } else {
                 dispatch(setFilterTypePokemon(typeSelect.current.value));
                 dispatch(setPokemonName(false));
+                dispatch(setCurrentPage(1));
+
             }
         }
 
