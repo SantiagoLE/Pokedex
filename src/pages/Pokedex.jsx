@@ -31,7 +31,7 @@ const Pokedex = () => {
     const firstIndex = lastIndex - pokemonsPerPag //Numero de elementos por pagina
 
     return (
-        <>
+        <div className='pokedex_contain'>
             <header className='pokedex_header'>
                 <img className='header_img' src="/pokedex.png" alt="" />
                 <div className='header_color-red'></div>
@@ -97,7 +97,7 @@ const Pokedex = () => {
                 }
 
             </div>
-        </>
+        </div>
     )
 }
 

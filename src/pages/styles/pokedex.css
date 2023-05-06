@@ -1,3 +1,7 @@
+.pokedex_contain{
+    padding-bottom: 1rem;
+}
+
 .pokedex_header {
     width: 100%;
     position: fixed;
