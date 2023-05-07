@@ -1,3 +1,5 @@
+
+
 .fire {
     background: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
     border: 0.5rem solid #E35825;
@@ -107,8 +109,19 @@
     color: #4caac7;
 }
 
+.pokemon_card-loading{
+    height: 390px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: white;
+    position: relative; 
+    border: 0.5rem solid #000000;
+}
+
 .pokemon_card {
-    height: 380px;
+    height: 390px;
     width: 100%;
     max-width: 250px;
     border-radius: 0.5rem;

@@ -1,17 +1,18 @@
-import React,{ useEffect } from 'react'
+import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import "./styles/pokemonCard.css"
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Loading from '../loading/Loading'
 
 
 
 const PokemonCard = ({ url }) => {
 
-    const {pokemonName} = useSelector(state => state)
+    const { pokemonName } = useSelector(state => state)
 
-   const urlSeacrh = pokemonName ? `https://pokeapi.co/api/v2/pokemon/${pokemonName}` : url
- 
+    const urlSeacrh = pokemonName ? `https://pokeapi.co/api/v2/pokemon/${pokemonName}` : url
+
     const [pokemon, getPokemon] = useFetch(urlSeacrh)
 
     useEffect(() => {
@@ -20,48 +21,58 @@ const PokemonCard = ({ url }) => {
 
     const navigate = useNavigate()
 
-const handleClick = () => {
-   navigate (`/pokedex/${pokemonName}`)
-   
-}
+    const handleClick = (pokeName) => {
+        navigate(`/pokedex/${pokeName}`)
+
+    }
+
+
+
 
 
     return (
-        <article className={`pokemon_card ${pokemon?.types[0].type.name}`} onClick={handleClick}>
-            <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}></div>
-          
-            <div className='pokemon_card-info'>
+        <article className={pokemon ? `pokemon_card ${pokemon?.types[0].type.name}` : "pokemon_card-loading"} onClick={() => handleClick(pokemon?.name)}>
+            {
+                pokemon
+                    ? <>
+                        <div className={`pokemon_card-backgroundType  ${pokemon?.types[0].type.name}`}></div>
 
-                <img className='pokemon_card-img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.name} />
-                <h2 className='pokemon_card-name'>{pokemon?.name}</h2>
-                <ul className='pokemon_card-types'>
-                    {
-                        pokemon?.types.map((poke, index) => (
-                            <li key={poke.slot}>{
-                                pokemon?.types.length === 1
-                                    ? poke.type.name
-                                    : index === 0
-                                        ? `${poke.type.name} /`
-                                        : poke.type.name
-                            }
-                            </li>
-                        ))
-                    }
-                </ul>
+                        <div className='pokemon_card-info'>
 
-                <h6 className='pokemon_card-titleType'>Type</h6>
+                            <img className='pokemon_card-img' src={pokemon?.sprites.other["official-artwork"].front_default} alt={pokemon?.name} />
+                            <h2 className='pokemon_card-name'>{pokemon?.name}</h2>
+                            <ul className='pokemon_card-types'>
+                                {
+                                    pokemon?.types.map((poke, index) => (
+                                        <li key={poke.slot}>{
+                                            pokemon?.types.length === 1
+                                                ? poke.type.name
+                                                : index === 0
+                                                    ? `${poke.type.name} /`
+                                                    : poke.type.name
+                                        }
+                                        </li>
+                                    ))
+                                }
+                            </ul>
 
-                <section className='pokemon_card-section'>
-                    <ul className='pokemon_card-list'>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>HP</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[0].base_stat}</span></li>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>DEFENSE</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[2].base_stat}</span></li>
-                    </ul>
-                    <ul className='pokemon_card-list'>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>ATTACK</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[1].base_stat}</span></li>
-                        <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>SPEED</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[5].base_stat}</span></li>
-                    </ul>
-                </section>
-            </div>
+                            <h6 className='pokemon_card-titleType'>Type</h6>
+
+                            <section className='pokemon_card-section'>
+                                <ul className='pokemon_card-list'>
+                                    <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>HP</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[0].base_stat}</span></li>
+                                    <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>DEFENSE</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[2].base_stat}</span></li>
+                                </ul>
+                                <ul className='pokemon_card-list'>
+                                    <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>ATTACK</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[1].base_stat}</span></li>
+                                    <li className='pokemon_card-item'><span className='pokemon_card-itemTitle'>SPEED</span><span className={`pokemon_card-itemValue ${pokemon?.types[0].type.name}`}>{pokemon?.stats[5].base_stat}</span></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </>
+                    : <Loading />
+            }
+
 
 
 

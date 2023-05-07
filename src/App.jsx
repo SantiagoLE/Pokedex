@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Pokedex from './pages/Pokedex'
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import PokedexById from './pages/PokedexById'
+import Loading from './components/loading/Loading'
 
 
 function App() {
@@ -18,8 +19,6 @@ function App() {
           <Route path='/pokedex/:name' element={<PokedexById/>}/>
         </Route>
       </Routes>
-
-
 
     </div>
   )

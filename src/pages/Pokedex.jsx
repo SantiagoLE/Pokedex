@@ -22,6 +22,9 @@ const Pokedex = () => {
         getAllPokemons()
     }, [url])
 
+
+
+
     // PAGINACION 
 
     // Current page viene de un estado global
@@ -41,12 +44,13 @@ const Pokedex = () => {
                     <div className='header_circle-gray'></div>
                 </div>
             </header>
-
             <div className='pokedex_contain'>
                 <p className='pokedex_paragraph'><span className='pokedex_paragraph-span1'>Welcome {trainerName}</span><span className='pokedex_paragraph-span2'>, enter the name of the pokemon you want to search for</span></p>
                 <div className='pokedex_input-contain'>
+                    
                     <InputPokedex />
                     <PokeList />
+
                 </div>
                 {
                     pokemonName
