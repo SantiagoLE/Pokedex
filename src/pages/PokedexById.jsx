@@ -5,7 +5,6 @@ import "./styles/pokedexById.css"
 import Stats from '../components/pokedexById/Stats'
 import Movements from '../components/pokedexById/Movements'
 import TypeAndAbilities from '../components/pokedexById/TypeAndAbilities'
-import Loading from '../components/loading/Loading'
 
 const PokedexById = () => {
 
@@ -20,7 +19,6 @@ const PokedexById = () => {
   }, [url])
 
 
-  console.log(pokemon);
 
 
 

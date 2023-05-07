@@ -12,7 +12,6 @@ axios.get(url)
 .then(res => {
     setState(res.data)
     setHasError(false)
-console.log(res.data);
 })
 .catch(err => {
     console.log(err)

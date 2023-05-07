@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slice'
 import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
 import { setCurrentPage } from '../../store/slices/currentPage.slice'
 import "./styles/pokeList.css"
-// import { setErrorPokemon } from '../../store/slices/errorPokemon.slice'
+import { setTypePokemon } from '../../store/slices/typeSelected.slice'
 
 const PokeList = () => {
 
@@ -23,37 +23,45 @@ const PokeList = () => {
     const typeSelect = useRef()
 
 
-const [optionSeleted, setOptionSeleted] = useState()
+    const { selectedTypePokemon } = useSelector(state => state)
 
-    const handleChangeType = (e) => {
 
-     setOptionSeleted(e.target.value);
-     
-            if (typeSelect.current.value === "allPokemons") {
-                dispatch(setFilterTypePokemon(false));
-                dispatch(setPokemonName(false));
-                dispatch(setCurrentPage(1));
-            } else {
-                dispatch(setFilterTypePokemon(typeSelect.current.value));
-                dispatch(setPokemonName(false));
-                dispatch(setCurrentPage(1));
+    const handleChangeType = (type) => {
+        dispatch(setTypePokemon(type.target.value))
 
-            }
-    // dispatch(setErrorPokemon(false))
+        if (typeSelect.current.value === "allPokemons") {
+            dispatch(setFilterTypePokemon(false));
+            dispatch(setPokemonName(false));
+            dispatch(setCurrentPage(1));
+        } else {
+            dispatch(setFilterTypePokemon(typeSelect.current.value));
+            dispatch(setPokemonName(false));
+            dispatch(setCurrentPage(1));
+
+        }
     }
 
 
     return (
 
         <div className='pokelist_contain'>
-                       <select className='pokelist_select' ref={typeSelect} onChange={handleChangeType} >
-                       <option className='pokelist_option' value="allPokemons" disabled={"allPokemons" === optionSeleted}>all pokemons</option>
-                {
-                    allTypePoke?.results.map(typePoke => (
-                    <option className='pokelist_option' key={typePoke.name} value={typePoke.name} disabled={typePoke.name === optionSeleted}>{typePoke.name}</option>
-                       ))
+            <select className='pokelist_select' ref={typeSelect} onChange={handleChangeType}>
+                <option className='pokelist_option' value={selectedTypePokemon}>{selectedTypePokemon}</option>
+                {selectedTypePokemon !== "allPokemons" && (
+                    <option className='pokelist_option' value="allPokemons">all pokemons</option>
+                )}
+                {allTypePoke?.results.map(typePoke => {
+                    if (typePoke.name !== "shadow" && typePoke.name !== "unknown" && selectedTypePokemon !== typePoke.name) {
+                        return (
+                            <option className='pokelist_option' key={typePoke.name} value={typePoke.name}>
+                                {typePoke.name}
+                            </option>
+                        );
                     }
+                    return null;
+                })}
             </select>
+
         </div>
     )
 }
