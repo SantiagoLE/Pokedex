@@ -90,11 +90,10 @@
    padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    
    
 }
 
-@media (min-width: 490px ) {
+@media (min-width: 640px ) {
     .pokedex_input-contain{
         margin: 0 1rem;
         flex-direction: row;

@@ -2,6 +2,10 @@
     visibility: hidden;
 }
 
+.pagination{
+margin-top: 1rem;
+}
+
 .pagination-previous, .pagination-next{
     background-color: rgba(88, 10, 104, 0.849);
     color: rgb(187, 185, 185);

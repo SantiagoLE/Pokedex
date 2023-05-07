@@ -3,12 +3,14 @@
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 2rem;
+    align-self: center;
 }
 
-@media (min-width: 500px){
+@media (min-width: 630px){
     .inputPokedex_form-contain{
         padding-left: 1rem;
         padding-right: 0;
+        align-self: none;
     }
 }
 
@@ -44,7 +46,6 @@ margin-top: 0;
 border: none;
 font-size: 1.2rem;
 overflow-y: scroll;
-/* border-radius: 0 0 1rem 1rem; */
 }
 
 .inputPokedex_form-button{
