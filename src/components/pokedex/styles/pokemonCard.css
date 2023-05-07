@@ -9,7 +9,7 @@
 .grass{
     background: linear-gradient(178.92deg, #7EC6C5 0.92%, #1dd88d 47.96%, #CAE099 99.08%);
     border: 0.5rem solid #ABDAC6;
-    color: #ABDAC6;
+    color: #048b16;
 
 }
 
@@ -40,7 +40,7 @@
 .electric{
     background: linear-gradient(177.03deg, #f7bf06 -11.97%, #c9df02 71.28%, #e0f803c7 135.64%);
     border: 0.5rem solid #c9df02;
-    color: #c9df02; 
+    color: #ceca03; 
 }
 
 .ground{
@@ -200,4 +200,5 @@ font-size: 2rem ;
     text-align: center;
     background: none;
     border: none;
+    font-weight: 700;
 }

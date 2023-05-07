@@ -13,19 +13,38 @@
 }
 
 .inputPokedex_form{
-   height: 30px;
    display: flex;
+   height: 30px;
+   position: relative;
+
+   
 }
 
 .inputPokedex_form-input{
-    padding: 0.2rem 1.3rem 2rem 1.3rem;
-    width: 100%;
-    max-width: 450px;
-    min-width: 170px;
-    border: none;
-    box-shadow: 2px 2px 2px black;
+    height: 35px;
+   width: 300px;
+    box-shadow: 2px 2px 1px black;
     border-radius: 0.5rem 0 0 0.5rem;
     font-size: 1.2rem;
+    padding-left: 1rem;
+    border: none;
+   
+}
+
+.react-autosuggest__suggestions-container {
+   width: 300px;
+   max-height: 200px;
+background-color: white;
+    text-align: center;
+    z-index: 100;
+    position: absolute;
+top: 29px;
+cursor: pointer;
+margin-top: 0;
+border: none;
+font-size: 1.2rem;
+overflow-y: scroll;
+/* border-radius: 0 0 1rem 1rem; */
 }
 
 .inputPokedex_form-button{
@@ -36,4 +55,5 @@
 border-radius: 0 0.5rem 0.5rem 0;
 font-size: 1.2rem;
 color: white;
+/* max-height: 40px; */
 }

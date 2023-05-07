@@ -43,7 +43,6 @@ const PokeList = () => {
 
 
     return (
-
         <div className='pokelist_contain'>
             <select className='pokelist_select' ref={typeSelect} onChange={handleChangeType}>
                 <option className='pokelist_option' value={selectedTypePokemon}>{selectedTypePokemon}</option>
