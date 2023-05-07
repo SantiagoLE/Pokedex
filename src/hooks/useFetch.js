@@ -5,14 +5,22 @@ import { useState } from "react"
 const useFetch = (url) => {
 
 const [state, setState] = useState()
+const [hasError, setHasError] = useState(false)
 
 const getApi = () => {
 axios.get(url)
-.then(res => setState(res.data))
-.catch(err => console.log(err))
+.then(res => {
+    setState(res.data)
+    setHasError(false)
+console.log(res.data);
+})
+.catch(err => {
+    console.log(err)
+setHasError(true)
+})
 }
 
-return [state, getApi]
+return [state, getApi, hasError]
 
 }
 

@@ -16,7 +16,6 @@ const Pokedex = () => {
         : `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
 
     const [allPokemons, getAllPokemons] = useFetch(url)
-    console.log(filterTypePokemon);
 
     useEffect(() => {
         getAllPokemons()
@@ -44,15 +43,19 @@ const Pokedex = () => {
                     <div className='header_circle-gray'></div>
                 </div>
             </header>
+
             <div className='pokedex_contain'>
                 <p className='pokedex_paragraph'><span className='pokedex_paragraph-span1'>Welcome {trainerName}</span><span className='pokedex_paragraph-span2'>, enter the name of the pokemon you want to search for</span></p>
+              
                 <div className='pokedex_input-contain'>
                     
                     <InputPokedex />
                     <PokeList />
 
                 </div>
-                {
+        
+                {  
+                
                     pokemonName
                         ? ""
                         : <Pagination
@@ -63,10 +66,13 @@ const Pokedex = () => {
                 }
 
 
+
                 <div className='pokemon_card-containt'>
-                    {
-                        pokemonName
-                            ? <PokemonCard />
+                    {  
+                        pokemonName 
+                        
+                            ?
+                             <PokemonCard />
 
                             :
                             filterTypePokemon
@@ -99,8 +105,9 @@ const Pokedex = () => {
                         />
 
                 }
-
+            
             </div>
+
         </div>
     )
 }

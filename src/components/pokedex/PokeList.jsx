@@ -5,6 +5,7 @@ import { setFilterTypePokemon } from '../../store/slices/filterTypePokemons.slic
 import { setPokemonName } from '../../store/slices/pokemonNameSearch.slice'
 import { setCurrentPage } from '../../store/slices/currentPage.slice'
 import "./styles/pokeList.css"
+// import { setErrorPokemon } from '../../store/slices/errorPokemon.slice'
 
 const PokeList = () => {
 
@@ -38,7 +39,7 @@ const [optionSeleted, setOptionSeleted] = useState()
                 dispatch(setCurrentPage(1));
 
             }
-    
+    // dispatch(setErrorPokemon(false))
     }
 
 

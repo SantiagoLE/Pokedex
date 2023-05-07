@@ -120,6 +120,10 @@
     border: 0.5rem solid #000000;
 }
 
+.pokemon_card-err{
+font-size: 2rem ;
+}
+
 .pokemon_card {
     height: 390px;
     width: 100%;
