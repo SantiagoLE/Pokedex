@@ -26,6 +26,7 @@ margin-bottom: 1rem;
 
 
 .typeAndAbilities_item-tipe{
+    height: 1.8rem;
     text-shadow: 1px 1px 10px #fffbfb;
     border: none;
     color: black;
@@ -36,6 +37,7 @@ margin-bottom: 1rem;
 }
 
 .typeAndAbilities_item-ability{
+    height: 1.8rem;
     font-weight: 500;
     font-size: 1.1rem;
     background-color: rgb(185, 185, 184);
